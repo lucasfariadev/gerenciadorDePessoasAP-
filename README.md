@@ -13,7 +13,6 @@
 ```
 http://localhost:8080/pessoas
 http://localhost:8080/enderecos
-
 ```
 
 ## Banco de dados: 
@@ -23,13 +22,13 @@ http://localhost:8080/enderecos
 * Nome do banco de dados: testdb
 
 
-```
+
 ## Utilizando a API: 
     ### criando Pessoa:
         * POST - Create 
         http://localhost:8080/pessoa
 
-
+```
         {
             "nome" : "Fulano de Tal",
             "nascimento" : "01/01/2001",
@@ -46,18 +45,21 @@ http://localhost:8080/enderecos
                     }
                 ]
         }
+```
         ### criando Endereco:
         * POST - Create 
         http://localhost:8080/enderecos
+        ```
         {
             "logradouro": "Rua de Teste 1",
             "cep" : 123456,
             "numero" : 89
         }
         
+        ```
         ### Outras operações podem ser realizadas 
         * GET
         * PUT
         * DELETE
 
-```
+
