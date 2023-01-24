@@ -26,8 +26,10 @@ http://localhost:8080/enderecos
 ## Utilizando a API: 
     ### criando Pessoa:
         * POST - Create 
+        ```
         http://localhost:8080/pessoa
 
+```
 ```
         {
             "nome" : "Fulano de Tal",
@@ -46,10 +48,14 @@ http://localhost:8080/enderecos
                 ]
         }
 ```
+        
         ### criando Endereco:
         * POST - Create 
+        ```
         http://localhost:8080/enderecos
         ```
+        
+         ```
         {
             "logradouro": "Rua de Teste 1",
             "cep" : 123456,
