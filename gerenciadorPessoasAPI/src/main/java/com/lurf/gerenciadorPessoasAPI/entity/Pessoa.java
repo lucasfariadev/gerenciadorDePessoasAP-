@@ -1,18 +1,23 @@
 package com.lurf.gerenciadorPessoasAPI.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
-import org.hibernate.annotations.NotFound;
-import org.hibernate.annotations.NotFoundAction;
-
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import jakarta.persistence.*;
-
-
+@Getter
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -30,43 +35,8 @@ public class Pessoa implements Serializable {
 	@Column(name = "nascimento", nullable = false)
 	private String nascimento;
 
+	@OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
+	private List<Endereço> enderecos;
 
-	@ManyToOne(cascade=CascadeType.PERSIST)
-	@JoinColumn(name = "endereco")
-	private Endereço endereco;
-
-	public Long getId() {
-		return this.id;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getNascimento() {
-		return nascimento;
-	}
-
-	public void setNascimento(String nascimento) {
-		this.nascimento = nascimento;
-	}
-
-	public Endereço getEndereco() {
-		return endereco;
-	}
-
-	public void setEndereco(Endereço endereco) {
-		this.endereco = endereco;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-	
-	
 
 }

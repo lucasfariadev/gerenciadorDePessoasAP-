@@ -8,8 +8,9 @@ import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
-
+@Getter
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -30,38 +31,4 @@ public class Endereço {
 	@Column(name= "numero")
 	private int numero;
 
-	public Long getId() {
-		return Id;
-	}
-
-	public void setId(Long id) {
-		Id = id;
-	}
-
-	public String getLogradouro() {
-		return logradouro;
-	}
-
-	public void setLogradouro(String logradouro) {
-		this.logradouro = logradouro;
-	}
-
-	public long getCep() {
-		return cep;
-	}
-
-	public void setCep(long cep) {
-		this.cep = cep;
-	}
-
-	public int getNumero() {
-		return numero;
-	}
-
-	public void setNumero(int numero) {
-		this.numero = numero;
-	}
-
-	
-	
 }
