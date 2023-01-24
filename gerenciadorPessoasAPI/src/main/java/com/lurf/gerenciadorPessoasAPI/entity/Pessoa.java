@@ -36,7 +36,7 @@ public class Pessoa implements Serializable {
 	private String nascimento;
 
 	@OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
-	private List<Endereço> enderecos;
+	private List<Endereco> enderecos;
 
 
 }
